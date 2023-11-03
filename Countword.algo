@@ -1,0 +1,26 @@
+ALGORITHM CountWord
+VAR
+    sentence: STRING
+    wordCount, vowelCount, i: INTEGER
+BEGIN
+    wordCount := 0
+    vowelCount := 0
+    i := 1
+
+    WRITE("Enter a sentence (ending with a period):")
+    READ(sentence)
+
+    WHILE i <= LENGTH(sentence) DO
+        IF sentence[i] = " " AND i < LENGTH(sentence) THEN
+            wordCount := wordCount + 1
+        ELSE IF sentence[i] = "a" OR sentence[i] = "e" OR sentence[i] = "i" OR sentence[i] = "o" OR sentence[i] = "u" OR sentence[i] = "A" OR sentence[i] = "E" OR sentence[i] = "I" OR sentence[i] = "O" OR sentence[i] = "U" THEN
+            vowelCount := vowelCount + 1
+        END_IF
+        i := i + 1
+    END_WHILE
+
+    wordCount := wordCount + 1
+
+    WRITE("Number of words in the sentence:", wordCount)
+    WRITE("Number of vowels in the sentence:", vowelCount)
+END
